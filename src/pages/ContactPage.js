@@ -167,7 +167,7 @@ function ContactPage() {
       <section className="emergency-cta section-padding">
         <div className="container">
           <h2>Need Emergency Service?</h2>
-          <p>Call us immediately at <strong>(555) 123-4567</strong></p>
+          <p>Call us immediately at <strong>(404) 901-6779</strong></p>
           <p className="small-text">Available 24/7 for emergency HVAC repairs</p>
         </div>
       </section>
