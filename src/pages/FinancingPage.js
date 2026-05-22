@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './FinancingPage.css';
+import traneLogo from '../assets/images/TraneLogo_red.png'; // Import Trane Equipment 
+import powerPayLogo from '../assets/images/Powerpay.svg'; // Import PowerPay Logo 
+
 
 function FinancingPage() {
   const [openFAQ, setOpenFAQ] = useState(null);
@@ -10,7 +13,7 @@ function FinancingPage() {
       id: 1, 
       title: 'Trane Equipment', 
       rate: '0% APR for first 60 months*', 
-      color: '#e30613',
+      logo: traneLogo,
       terms: ['Competitive Rate', 'Flexible terms', '3-10 years', 'Fast approval'],
       ratesDesc: 'Competitive rates with flexible repayment options.',
       applicationDesc: 'Apply online today!',
@@ -19,7 +22,7 @@ function FinancingPage() {
     { 
       id: 2, 
       title: 'PowerPay', 
-      color: '#1a5f8c',
+      logo: powerPayLogo,
       terms: ['8.99% APR', 'Quick approval', 'Immediate funds'],
       applicationDesc: 'Quick and secure online application process.',
       paymentsDesc: 'Convenient monthly payments that work for you.'
