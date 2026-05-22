@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './FinancingPage.css';
-import traneLogo from './assets/images/TraneLogo_red.png'; // Import Trane Equipment 
-import powerPayLogo from './assets/images/Powerpay.svg'; // Import PowerPay Logo 
 
 
 function FinancingPage() {
@@ -13,8 +11,7 @@ function FinancingPage() {
       id: 1, 
       title: 'Trane Equipment', 
       rate: '0% APR for first 60 months*', 
-      logo: traneLogo,
-      terms: ['Competitive Rate', 'Flexible terms', '3-10 years', 'Fast approval'],
+      logo: '/images/TraneLogo_red.png',     // ← Public folder path      terms: ['Competitive Rate', 'Flexible terms', '3-10 years', 'Fast approval'],
       ratesDesc: 'Competitive rates with flexible repayment options.',
       applicationDesc: 'Apply online today!',
       paymentsDesc: 'Monthly payments tailored to fit your budget.'
@@ -22,8 +19,7 @@ function FinancingPage() {
     { 
       id: 2, 
       title: 'PowerPay', 
-      logo: powerPayLogo,
-      terms: ['8.99% APR', 'Quick approval', 'Immediate funds'],
+      logo: '/images/Powerpay.svg',          // ← Public folder path      terms: ['8.99% APR', 'Quick approval', 'Immediate funds'],
       applicationDesc: 'Quick and secure online application process.',
       paymentsDesc: 'Convenient monthly payments that work for you.'
     },
