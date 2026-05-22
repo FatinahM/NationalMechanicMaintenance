@@ -70,3 +70,7 @@
 .hero-buttons {
   margin-top: 40px;  /* adjust this value to taste */
 }
+
+.hero-content h1 {
+  color: #0047AB;  /* cobalt blue */
+}
