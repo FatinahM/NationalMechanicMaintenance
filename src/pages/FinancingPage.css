@@ -26,8 +26,8 @@
   object-fit: contain; 
   border-radius: 12px;
   margin: 0 auto;
-  padding: 15px; 
-  background: #f8f9fa;
+  padding: 10px; 
+  background: white;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
