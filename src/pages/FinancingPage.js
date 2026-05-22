@@ -8,44 +8,22 @@ function FinancingPage() {
   const financingOptions = [
     { 
       id: 1, 
-      title: 'Personal Loans', 
-      rate: '6.99% APR*', 
+      title: 'Trane Equipment', 
+      rate: '0% APR for first 60 months*', 
       color: '#e30613',
-      terms: ['Up to $50,000', 'Flexible terms', '5-10 year options', 'Fast approval'],
+      terms: ['Competitive Rate', 'Flexible terms', '3-10 years', 'Fast approval'],
       ratesDesc: 'Competitive rates with flexible repayment options.',
-      applicationDesc: 'Apply online or with us using a secure credit application.',
+      applicationDesc: 'Apply online today!',
       paymentsDesc: 'Monthly payments tailored to fit your budget.'
     },
     { 
       id: 2, 
-      title: 'Credit Card', 
-      rate: 'Promotional Rate', 
+      title: 'PowerPay', 
       color: '#1a5f8c',
-      terms: ['12-24 months 0% APR', 'No money down', 'Quick approval', 'Immediate funds'],
-      ratesDesc: 'Special promotional financing with 0% interest periods.',
+      terms: ['8.99% APR', 'Quick approval', 'Immediate funds'],
       applicationDesc: 'Quick and secure online application process.',
       paymentsDesc: 'Convenient monthly payments that work for you.'
     },
-    { 
-      id: 3, 
-      title: 'Home Equity Line', 
-      rate: 'Prime + 1%*', 
-      color: '#0066cc',
-      terms: ['Large amounts', 'Low interest', 'Tax deductible', 'Flexible draws'],
-      ratesDesc: 'Low rates on larger loan amounts.',
-      applicationDesc: 'Easy application with fast approval.',
-      paymentsDesc: 'Flexible payment options to match your budget.'
-    },
-    { 
-      id: 4, 
-      title: 'Rebates & Incentives', 
-      rate: 'Save Up To', 
-      color: '#e55a2b',
-      terms: ['ENERGY STAR rebates', 'Tax credits', 'Utility rebates', 'Manufacturer offers'],
-      ratesDesc: 'Maximize your savings with available incentives.',
-      applicationDesc: 'We help you claim all eligible rebates and credits.',
-      paymentsDesc: 'Lower your overall project cost significantly.'
-    }
   ];
 
   const faq = [
