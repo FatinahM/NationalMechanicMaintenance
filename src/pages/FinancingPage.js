@@ -86,44 +86,6 @@ function FinancingPage() {
         </div>
       </section>
 
-      {/* Rest of your sections remain unchanged */}
-      <section className="why-finance section-padding">
-        <div className="container">
-          <h2>Why Finance With Us?</h2>
-          <div className="benefits-grid">
-            <div className="benefit-item"><div className="benefit-icon">💰</div><h4>Low Interest Rates</h4><p>Competitive rates starting as low as 6.99% APR</p></div>
-            <div className="benefit-item"><div className="benefit-icon">⚡</div><h4>Fast Approval</h4><p>Get approved in as little as 24 hours</p></div>
-            <div className="benefit-item"><div className="benefit-icon">✅</div><h4>No Hidden Fees</h4><p>Transparent terms with no surprise charges</p></div>
-            <div className="benefit-item"><div className="benefit-icon">🎯</div><h4>Flexible Terms</h4><p>Choose payment plans that work for you</p></div>
-            <div className="benefit-item"><div className="benefit-icon">📋</div><h4>Easy Application</h4><p>Simple online application process</p></div>
-            <div className="benefit-item"><div className="benefit-icon">💳</div><h4>All Credit Types</h4><p>We work with all credit profiles</p></div>
-          </div>
-        </div>
-      </section>
-
-
-
-      <section className="faq-section section-padding">
-        <div className="container">
-          <h2>Frequently Asked Questions</h2>
-          <div className="faq-container">
-            {faq.map((item, index) => (
-              <div key={index} className="faq-item">
-                <button className="faq-question" onClick={() => setOpenFAQ(openFAQ === index ? null : index)}>
-                  <span>{item.question}</span>
-                  <span className="faq-arrow">{openFAQ === index ? '▼' : '▶'}</span>
-                </button>
-                {openFAQ === index && (
-                  <div className="faq-answer">
-                    <p>{item.answer}</p>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <p className="disclaimer">*Terms and conditions apply. APR rates subject to credit approval. Ask about current promotional offers.</p>
     </div>
   );
