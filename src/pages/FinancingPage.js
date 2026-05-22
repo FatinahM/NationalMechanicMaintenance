@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './FinancingPage.css';
-
-//Import Logos 
-import traneLogo from '../assets/images/TraneLogo_red.png'; // Import Trane Equipment 
-import powerPayLogo from '../assets/images/Powerpay.svg'; // Import PowerPay Logo 
+import traneLogo from './assets/images/TraneLogo_red.png'; // Import Trane Equipment 
+import powerPayLogo from './assets/images/Powerpay.svg'; // Import PowerPay Logo 
 
 
 function FinancingPage() {
@@ -16,7 +14,6 @@ function FinancingPage() {
       title: 'Trane Equipment', 
       rate: '0% APR for first 60 months*', 
       logo: traneLogo,
-      color: '#e30613'; //Trane Red
       terms: ['Competitive Rate', 'Flexible terms', '3-10 years', 'Fast approval'],
       ratesDesc: 'Competitive rates with flexible repayment options.',
       applicationDesc: 'Apply online today!',
@@ -26,7 +23,6 @@ function FinancingPage() {
       id: 2, 
       title: 'PowerPay', 
       logo: powerPayLogo,
-      color: '#1a5f8c', // Dark blue
       terms: ['8.99% APR', 'Quick approval', 'Immediate funds'],
       applicationDesc: 'Quick and secure online application process.',
       paymentsDesc: 'Convenient monthly payments that work for you.'
@@ -57,17 +53,14 @@ function FinancingPage() {
           <div className="financing-grid">
             {financingOptions.map((option) => (
               <div key={option.id} className="financing-card">
-                {/* === FIXED: Using actual imported logos === */}
+                {/* Logo Area */}
                 <div className="logo-section">
-                  <img 
-                    src={option.logo} 
-                    alt={`${option.title} logo`} 
-                    className="brand-logo"
-                    onError={(e) => {
-                      e.target.onerror = null;
-                      e.target.src = 'https://via.placeholder.com/160?text=Logo'; // Fallback
-                    }}
-                  />
+                  <div 
+                    className="brand-logo" 
+                    style={{ backgroundColor: option.color }}
+                  >
+                    <span className="brand-text">{option.title.split(' ')[0]}</span>
+                  </div>
                 </div>
 
                 <h3 className="card-title">{option.title}</h3>
