@@ -20,19 +20,20 @@
 }
 
 .brand-logo {
-  width: 160px;
-  height: 160px;
-  object-fit: contain; 
+  max-width: 160px;
+  height: auto;          /* ← replaces fixed height: 160px */
+  object-fit: contain;
   border-radius: 12px;
   margin: 0 auto;
-  padding: 10px; 
+  display: block;        /* ← needed so margin: auto centers an img */
+  padding: 10px;
   background: white;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 
 .brand-logo:hover {
-  tranform: scale(1.08);
+  transform: scale(1.08);
 }
 
 /* MAKES LOGOS CIRCULAR
