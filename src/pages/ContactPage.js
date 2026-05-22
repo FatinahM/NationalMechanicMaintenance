@@ -62,8 +62,8 @@ function ContactPage() {
             <div className="info-card">
               <div className="info-icon">📍</div>
               <h3>Address</h3>
-              <p>123 Main Street</p>
-              <p>City, State 12345</p>
+              <p>P.O. Box 133286</p>
+              <p>Atlanta,Ga 30333</p>
             </div>
             <div className="info-card">
               <div className="info-icon">⏰</div>
