@@ -11,7 +11,8 @@ function FinancingPage() {
       id: 1, 
       title: 'Trane Equipment', 
       rate: '0% APR for first 60 months*', 
-      logo: '/images/TraneLogo_red.png',     // ← Public folder path      terms: ['Competitive Rate', 'Flexible terms', '3-10 years', 'Fast approval'],
+      logo: `${process.env.PUBLIC_URL}/images/TraneLogo_red.png`,
+      terms: ['Competitive Rate', 'Flexible terms', '3-10 years', 'Fast approval'],
       ratesDesc: 'Competitive rates with flexible repayment options.',
       applicationDesc: 'Apply online today!',
       paymentsDesc: 'Monthly payments tailored to fit your budget.'
@@ -19,7 +20,8 @@ function FinancingPage() {
     { 
       id: 2, 
       title: 'PowerPay', 
-      logo: '/images/Powerpay.svg',          // ← Public folder path      terms: ['8.99% APR', 'Quick approval', 'Immediate funds'],
+      logo: `${process.env.PUBLIC_URL}/images/Powerpay.svg`,
+      terms: ['8.99% APR', 'Quick approval', 'Immediate funds'],
       applicationDesc: 'Quick and secure online application process.',
       paymentsDesc: 'Convenient monthly payments that work for you.'
     },
