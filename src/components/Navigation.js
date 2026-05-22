@@ -14,7 +14,6 @@ function Navigation() {
       <div className="nav-container">
         <Link to="/" className="nav-logo">
           <img src={`${process.env.PUBLIC_URL}/images/logo-default.png`} alt="National Mechanic Maintenance" /> 
-          National Mechanic Maintenance
         </Link>
         <div className={`menu-icon ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
           <span></span>
