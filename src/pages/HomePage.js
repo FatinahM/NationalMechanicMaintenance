@@ -1,11 +1,40 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './HomePage.css';
 
+const heroSlides = [
+  '/images/house222222.png',
+  '/images/HVAC.png',
+  '/images/feauture_1_img_1-2.jpg',
+];
+
 function HomePage() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <div className="home-page">
       <section className="hero">
+
+        {/* Slideshow background */}
+        <div className="hero-slideshow">
+          {heroSlides.map((slide, index) => (
+            <div
+              key={index}
+              className={`hero-slide ${index === currentSlide ? 'active' : ''}`}
+              style={{ backgroundImage: `url(${slide})` }}
+            />
+          ))}
+          <div className="hero-overlay" />
+        </div>
+
+        {/* Hero content — unchanged */}
         <div className="hero-content">
           <h1>Professional HVAC Services</h1>
           <p>Expert heating, cooling, and ventilation solutions for your home and business</p>
@@ -14,6 +43,18 @@ function HomePage() {
             <Link to="/services" className="btn-secondary">View Services</Link>
           </div>
         </div>
+
+        {/* Dot controls */}
+        <div className="hero-dots">
+          {heroSlides.map((_, index) => (
+            <button
+              key={index}
+              className={`hero-dot ${index === currentSlide ? 'active' : ''}`}
+              onClick={() => setCurrentSlide(index)}
+            />
+          ))}
+        </div>
+
       </section>
 
       <section className="featured-services section-padding">
