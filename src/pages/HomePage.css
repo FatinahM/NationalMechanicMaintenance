@@ -66,3 +66,7 @@
 .hero-dot.active {
   background: white;
 }
+
+.hero-buttons {
+  margin-top: 40px;  /* adjust this value to taste */
+}
