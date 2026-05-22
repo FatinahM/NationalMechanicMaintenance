@@ -51,12 +51,12 @@ function FinancingPage() {
               <div key={option.id} className="financing-card">
                 {/* Logo Area */}
                 <div className="logo-section">
-                  <div 
-                    className="brand-logo" 
-                    style={{ backgroundColor: option.color }}
-                  >
-                    <span className="brand-text">{option.title.split(' ')[0]}</span>
-                  </div>
+                  <img
+                    src={option.logo}
+                    alt={`${option.title} logo`}
+                    className="brand-logo"
+                  />
+                </div>
                 </div>
 
                 <h3 className="card-title">{option.title}</h3>
