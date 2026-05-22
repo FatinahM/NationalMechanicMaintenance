@@ -53,12 +53,33 @@ function FinancingPage() {
               <div key={option.id} className="financing-card">
                 {/* Logo Area */}
                 <div className="logo-section">
-                  <img
-                    src={option.logo}
-                    alt={`${option.title} logo`}
-                    className="brand-logo"
-                  />
+                  <div className="logo-section" >
+                    <img src={option.logo} alt={`${option.title} logo`} className="brand-logo" /> 
+                  </div>
                 </div>
+
+                <h3 className="card-title">{option.title}</h3>
+                <div className="rate" style={{ color: option.color }}>{option.rate}</div>
+
+                <button className="apply-today-btn">APPLY TODAY</button>
+
+                {/* Trane-style Benefits */}
+                <div className="benefits">
+                  <div className="benefit">
+                    <h4>Competitive Rates</h4>
+                    <p>{option.ratesDesc}</p>
+                  </div>
+                  <div className="benefit">
+                    <h4>Easy Application</h4>
+                    <p>{option.applicationDesc}</p>
+                  </div>
+                  <div className="benefit">
+                    <h4>Convenient Payments</h4>
+                    <p>{option.paymentsDesc}</p>
+                  </div>
+                </div>
+
+                <Link to="/inquiry" className="btn-primary">Learn More & Apply</Link>
               </div>
             ))}
           </div>
@@ -81,20 +102,6 @@ function FinancingPage() {
       </section>
 
 
-      {/* Rest of your sections remain unchanged */}
-      <section className="why-finance section-padding">
-        <div className="container">
-          <h2>Why Finance With Us?</h2>
-          <div className="benefits-grid">
-            <div className="benefit-item"><div className="benefit-icon">💰</div><h4>Low Interest Rates</h4><p>Competitive rates starting as low as 6.99% APR</p></div>
-            <div className="benefit-item"><div className="benefit-icon">⚡</div><h4>Fast Approval</h4><p>Get approved in as little as 24 hours</p></div>
-            <div className="benefit-item"><div className="benefit-icon">✅</div><h4>No Hidden Fees</h4><p>Transparent terms with no surprise charges</p></div>
-            <div className="benefit-item"><div className="benefit-icon">🎯</div><h4>Flexible Terms</h4><p>Choose payment plans that work for you</p></div>
-            <div className="benefit-item"><div className="benefit-icon">📋</div><h4>Easy Application</h4><p>Simple online application process</p></div>
-            <div className="benefit-item"><div className="benefit-icon">💳</div><h4>All Credit Types</h4><p>We work with all credit profiles</p></div>
-          </div>
-        </div>
-      </section>
 
       <section className="faq-section section-padding">
         <div className="container">
