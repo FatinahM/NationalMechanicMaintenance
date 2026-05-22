@@ -35,10 +35,11 @@
   tranform: scale(1.08);
 }
 
-/* MAKES LOGOS CIRCULAR*/
+/* MAKES LOGOS CIRCULAR
 .brand-logo {
   border-radius: 50%; 
-
+}
+*/
 .card-title {
   font-size: 26px;
   margin: 15px 0 8px;
