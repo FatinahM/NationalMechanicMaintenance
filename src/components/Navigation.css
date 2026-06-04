@@ -21,7 +21,7 @@
 }
 
 .nav-logo {
-  color: blue;
+  color: white;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -42,6 +42,7 @@
   display: flex;
   list-style: none;
   gap: 2rem;
+  color:#0066cc
 }
 
 .nav-item {
