@@ -8,6 +8,57 @@ const heroSlides = [
   '/images/feauture_1_img_1-2.jpg',
 ];
 
+/* ── inline SVG icons (no external dependency) ── */
+const IconSnowflake = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+    fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/>
+    <polyline points="6 6 12 2 18 6"/><polyline points="6 18 12 22 18 18"/>
+    <polyline points="2 9 6 6 2 15"/><polyline points="22 9 18 6 22 15"/>
+  </svg>
+);
+const IconFlame = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+    fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 3z"/>
+  </svg>
+);
+const IconWind = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+    fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M9.59 4.59A2 2 0 1111 8H2m10.59 11.41A2 2 0 1014 16H2m15.73-8.27A2.5 2.5 0 1119.5 12H2"/>
+  </svg>
+);
+const IconTool = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+    fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
+  </svg>
+);
+
+const services = [
+  {
+    icon: <IconSnowflake />,
+    title: 'AC Installation & Repair',
+    description: 'Professional air conditioning installation, maintenance, and emergency repair services available 24/7.',
+  },
+  {
+    icon: <IconFlame />,
+    title: 'Heating Systems',
+    description: 'Complete heating solutions including installation, repairs, and seasonal maintenance for comfort year-round.',
+  },
+  {
+    icon: <IconWind />,
+    title: 'Ventilation Systems',
+    description: 'Improve your indoor air quality with our professional ventilation system services and maintenance.',
+  },
+  {
+    icon: <IconTool />,
+    title: 'Maintenance Plans',
+    description: 'Preventive maintenance programs to keep your HVAC system running efficiently and reduce repair costs.',
+  },
+];
+
 function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -21,8 +72,6 @@ function HomePage() {
   return (
     <div className="home-page">
       <section className="hero">
-
-        {/* Slideshow background */}
         <div className="hero-slideshow">
           {heroSlides.map((slide, index) => (
             <div
@@ -34,7 +83,6 @@ function HomePage() {
           <div className="hero-overlay" />
         </div>
 
-        {/* Hero content — unchanged */}
         <div className="hero-content">
           <h1>Professional HVAC Services</h1>
           <p>Expert heating, cooling, and ventilation solutions for your home and business</p>
@@ -44,7 +92,6 @@ function HomePage() {
           </div>
         </div>
 
-        {/* Dot controls */}
         <div className="hero-dots">
           {heroSlides.map((_, index) => (
             <button
@@ -54,37 +101,29 @@ function HomePage() {
             />
           ))}
         </div>
-
       </section>
 
+      {/* ── SERVICES — Option 3 ── */}
       <section className="featured-services section-padding">
         <div className="container">
-          <h2>Our Services</h2>
+          <div className="services-heading">
+            <span className="services-eyebrow">What We Do</span>
+            <h2>Our Services</h2>
+          </div>
           <div className="services-grid">
-            <div className="service-card">
-              <div className="service-icon">❄️</div>
-              <h3>AC Installation & Repair</h3>
-              <p>Professional air conditioning installation, maintenance, and emergency repair services available 24/7.</p>
-              <Link to="/services">Learn More →</Link>
-            </div>
-            <div className="service-card">
-              <div className="service-icon">🔥</div>
-              <h3>Heating Systems</h3>
-              <p>Complete heating solutions including installation, repairs, and seasonal maintenance for comfort year-round.</p>
-              <Link to="/services">Learn More →</Link>
-            </div>
-            <div className="service-card">
-              <div className="service-icon">🌬️</div>
-              <h3>Ventilation Systems</h3>
-              <p>Improve your indoor air quality with our professional ventilation system services and maintenance.</p>
-              <Link to="/services">Learn More →</Link>
-            </div>
-            <div className="service-card">
-              <div className="service-icon">🛠️</div>
-              <h3>Maintenance Plans</h3>
-              <p>Preventive maintenance programs to keep your HVAC system running efficiently and reduce repair costs.</p>
-              <Link to="/services">Learn More →</Link>
-            </div>
+            {services.map((svc, i) => (
+              <div className="service-card" key={i}>
+                <div className="service-card-accent" />
+                <div className="service-icon-circle" aria-hidden="true">
+                  {svc.icon}
+                </div>
+                <h3>{svc.title}</h3>
+                <p>{svc.description}</p>
+                <Link to="/services" className="service-card-btn">
+                  Learn More <span aria-hidden="true">→</span>
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
       </section>

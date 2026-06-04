@@ -38,7 +38,7 @@ function Navigation() {
           </li>
           <li className="nav-item">
             <Link to="/contact" className="nav-links" onClick={() => setIsMenuOpen(false)}>
-              Contact
+              Contact Us 
             </Link>
           </li>
           <li className="nav-item">
