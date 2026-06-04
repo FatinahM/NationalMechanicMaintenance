@@ -14,7 +14,7 @@
 
 /* --- Container --- */
 .nav-container {
-  display: inline;
+  display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
