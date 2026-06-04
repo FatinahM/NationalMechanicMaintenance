@@ -50,7 +50,7 @@ function ContactPage() {
             <div className="info-card">
               <div className="info-icon">📞</div>
               <h3>Phone</h3>
-              <p><a href="tel:5551234567">(555) 123-4567</a></p>
+              <p><a href="tel:5551234567">(404) 901-6779</a></p>
               <p className="small">Available 24/7 for emergencies</p>
             </div>
             <div className="info-card">
