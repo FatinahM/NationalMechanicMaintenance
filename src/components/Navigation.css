@@ -1,167 +1,248 @@
 .navbar {
-  background: linear-gradient(135deg, white 0%, white 100%);
-  height: 80px;
+  background-color: #ffffff;
+  height: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.2rem;
+  font-size: 1rem;
   position: sticky;
   top: 0;
   z-index: 999;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
 }
 
+/* --- Container --- */
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   max-width: 1200px;
-  padding: 0 50px;
+  padding: 0 40px;
 }
 
+/* --- Logo --- */
 .nav-logo {
-  color: white;
   display: flex;
   align-items: center;
   gap: 10px;
   font-weight: 700;
-  font-size: 2rem;
-  transition: all 0.3s ease;
+  font-size: 1.5rem;
+  color: #0066cc;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  flex-shrink: 0;
 }
 
-.logo-icon {
-  font-size: 2.5rem;
+.nav-logo img {
+  height: 52px;       /* Desktop */
+  width: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .nav-logo:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
+  opacity: 0.9;
 }
 
+/* --- Menu List --- */
 .nav-menu {
   display: flex;
   list-style: none;
-  gap: 2rem;
-  color:#0066cc
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  align-items: center;
 }
 
 .nav-item {
-  line-height: 40px;
+  line-height: 1;
 }
 
+/* --- Nav Links --- */
 .nav-links {
   color: #0066cc;
   font-weight: 500;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.85rem;
+  border-radius: 5px;
+  display: inline-block;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+  white-space: nowrap;
 }
 
 .nav-links:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
+  background-color: #e8f0fb;
+  color: #004fa3;
+  transform: translateY(-1px);
 }
 
+/* Hide mobile-only link on desktop */
 .nav-links-mobile {
   display: none;
 }
 
+/* --- CTA Button --- */
 .nav-btn {
-  padding: 8px 20px;
-  border-radius: 5px;
+  padding: 9px 22px;
+  border-radius: 6px;
   background-color: #ff6b35;
-  color: white;
-  font-size: 1rem;
+  color: #ffffff;
+  font-size: 0.95rem;
   font-weight: 600;
-  transition: all 0.3s ease;
+  white-space: nowrap;
+  transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+  margin-left: 1rem;
+  flex-shrink: 0;
 }
 
 .nav-btn:hover {
   background-color: #e55a2b;
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.35);
 }
 
+/* --- Hamburger Icon (hidden on desktop) --- */
 .menu-icon {
   display: none;
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
+  padding: 4px;
 }
 
 .menu-icon span {
   width: 25px;
   height: 3px;
-  background-color: white;
+  background-color: #0066cc;
+  border-radius: 3px;
   transition: all 0.3s ease;
+  display: block;
 }
 
-@media screen and (max-width: 768px) {
-  .nav-container {
-    padding: 0 20px;
-  }
+/* Hamburger â†’ X animation */
+.menu-icon.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 8px);
+}
+.menu-icon.active span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.menu-icon.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -8px);
+}
 
-  .nav-logo {
-    font-size: 1.5rem;
+/* ============================================
+   TABLET  (max-width: 1024px)
+   ============================================ */
+@media screen and (max-width: 1024px) {
+  .nav-container {
+    padding: 0 24px;
   }
 
   .nav-logo img {
-  height: 30px;        /* adjust to fit your navbar height */
-  width: auto;
-  object-fit: contain;
-  margin-right: 5px;
-  vertical-align: middle;
-}
-
-  .logo-icon {
-    font-size: 2rem;
-  }
-
-  .nav-menu {
-    flex-direction: column;
-    width: 100%;
-    position: absolute;
-    top: 80px;
-    left: -100%;
-    transition: all 0.5s ease;
-    background-color: #0066cc;
-    gap: 0;
-  }
-
-  .nav-menu.active {
-    left: 0;
-    z-index: 1;
+    height: 44px;
   }
 
   .nav-links {
-    padding: 2rem;
-    width: 100%;
-    display: table;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    padding: 0.45rem 0.65rem;
   }
 
-  .nav-links-mobile {
-    display: block;
+  .nav-menu {
+    gap: 0.1rem;
   }
 
   .nav-btn {
-    padding: 1.5rem;
-    width: 100%;
-    display: table;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+  }
+}
+
+/* ============================================
+   MOBILE  (max-width: 768px)
+   ============================================ */
+@media screen and (max-width: 768px) {
+  .navbar {
+    height: 64px;
   }
 
+  .nav-container {
+    padding: 0 16px;
+  }
+
+  .nav-logo img {
+    height: 36px;
+  }
+
+  /* Show hamburger */
   .menu-icon {
     display: flex;
   }
 
-  .menu-icon.active span:nth-child(1) {
-    transform: rotate(45deg) translate(10px, 10px);
+  /* Hide desktop CTA button */
+  .nav-btn {
+    display: none;
   }
 
-  .menu-icon.active span:nth-child(2) {
-    opacity: 0;
+  /* Dropdown menu */
+  .nav-menu {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    background-color: #0066cc;
+    gap: 0;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, box-shadow 0.3s ease;
+    box-shadow: none;
   }
 
-  .menu-icon.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -7px);
+  .nav-menu.active {
+    max-height: 400px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .nav-item {
+    width: 100%;
+    line-height: 1;
+  }
+
+  .nav-links {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 1.1rem 1.5rem;
+    width: 100%;
+    display: block;
+    border-radius: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    transition: background-color 0.2s ease;
+  }
+
+  .nav-links:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    transform: none;
+  }
+
+  /* Show mobile CTA link inside menu */
+  .nav-links-mobile {
+    display: block;
+    background-color: #ff6b35;
+    color: #ffffff;
+    text-align: center;
+    font-weight: 600;
+    border-bottom: none;
+  }
+
+  .nav-links-mobile:hover {
+    background-color: #e55a2b;
   }
 }
