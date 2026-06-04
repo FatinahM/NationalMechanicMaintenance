@@ -14,7 +14,7 @@
 
 /* --- Container --- */
 .nav-container {
-  display: flex;
+  display: inline;
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -35,7 +35,7 @@
 }
 
 .nav-logo img {
-  height: 52px;       /* Desktop */
+  height: 60px;       /* Desktop */
   width: auto;
   object-fit: contain;
   display: block;
